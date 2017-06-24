@@ -8,7 +8,7 @@ def get_arg():
 
 
 def find_and_unscramble(key):
-    with open('scrabble-dictionary.txt', "r+") as f:
+    with open('scrabble-dictionary.txt') as f:
         words = f.read()
         words = words.split('\n')
     key = key.upper()
