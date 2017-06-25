@@ -13,17 +13,16 @@ def find_and_unscramble(key):
         words = words.split('\n')
     key = key.upper()
     unscrambled_words = []
+    sorted_key = sorted(key)
 
     for word in words:
-        if len(key) == len(word) and sorted(key) == sorted(word):
+        if len(key) == len(word) and sorted_key == sorted(word):
             unscrambled_words.append(word)
-    unscrambled_words = ', '.join(map(str, unscrambled_words))
 
     if len(unscrambled_words) == 0:
         print("\nSorry, no such word matched")
     else:
-        print("\nScrabble words that matched with input: ", unscrambled_words)
-
+        print("\nScrabble words that matched with input: ", ', '.join(map(str, unscrambled_words)))
 
 
 def main():
