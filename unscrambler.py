@@ -22,7 +22,7 @@ def find_and_unscramble(key):
     if len(unscrambled_words) == 0:
         print("\nSorry, no such word matched")
     else:
-        print("\nScrabble words that matched with input: ", ', '.join(map(str, unscrambled_words)))
+        print("\nScrabble words that matched with input: ", ', '.join(unscrambled_words))
 
 
 def main():
