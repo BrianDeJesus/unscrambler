@@ -2,20 +2,20 @@ import argparse
 
 def get_arg():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--the_key', '-k', type=str, required=True)
+    parser.add_argument('the_key', type=str)
     arg = parser.parse_args()
     return arg.the_key
 
+def open_dictionary():
+    with open('scrabble-dictionary.txt') as f:
+        for word in f:
+            yield word.strip()
 
 def find_and_unscramble(key):
-    with open('scrabble-dictionary.txt') as f:
-        words = f.read()
-        words = words.split('\n')
-    key = key.upper()
     unscrambled_words = []
     sorted_key = sorted(key)
 
-    for word in words:
+    for word in open_dictionary():
         if len(key) == len(word) and sorted_key == sorted(word):
             unscrambled_words.append(word)
 
@@ -26,7 +26,7 @@ def find_and_unscramble(key):
 
 
 def main():
-    key = get_arg()
+    key = get_arg().upper()
     find_and_unscramble(key)
 
 if __name__ == "__main__":

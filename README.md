@@ -5,12 +5,11 @@ This program finds and reveals any words in the scrabble dictionary txt file tha
 # How to use
 
 One argument is required. (scramble key)
- * -k
 
 **Example**
 
-Type the scrambled word after -k as an argument
+Type the scrambled word after unscrambler.py as an argument
 
 ```
-$ python3 unscrambler.py -k elloh
+$ python3 unscrambler.py elloh
 ```
