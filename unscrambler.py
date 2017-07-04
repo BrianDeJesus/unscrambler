@@ -2,10 +2,11 @@ import argparse
 
 def get_arg():
     parser = argparse.ArgumentParser()
-    parser.add_argument('the_key', type=str)
+    parser.add_argument('the_key')
     arg = parser.parse_args()
     return arg.the_key
 
+# generator
 def open_dictionary():
     with open('scrabble-dictionary.txt') as f:
         for word in f:
@@ -23,7 +24,6 @@ def find_and_unscramble(key):
         print("\nSorry, no such word matched")
     else:
         print("\nScrabble words that matched with input: ", ', '.join(unscrambled_words))
-
 
 def main():
     key = get_arg().upper()
